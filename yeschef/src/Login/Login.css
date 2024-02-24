@@ -48,6 +48,12 @@ body, html {
     text-align: center;
     top: 308px;
     width: 289px;
+    /*
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    padding: 10px;
+    */
 }
 
 .login .overlap-group {
@@ -59,17 +65,21 @@ body, html {
 }
 
 .login .create-account {
-    color: #1b4235;
+    background-color: #1b4235; 
+    color: #f5e3db;
     font-family: "Inter", Helvetica;
     font-size: 30px;
     font-weight: 400;
-    left: 0;
+    left: 20px; 
+    right: 20px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
     text-align: center;
-    top: 10px;
-    width: 545px;
+    top: -20px;
+    border: 1px solid #fff; 
+    border-radius: 5px; 
+    padding: 10px; 
 }
 
 .login .text-wrapper-2 {
@@ -147,6 +157,12 @@ body, html {
     text-align: center;
     top: 148px;
     width: 289px;
+    /*
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px; 
+    */
 }
 
 .login .rectangle-3 {
@@ -196,3 +212,30 @@ body, html {
     top: 43px;
     width: 132px;
 }
+
+.login .input-wrapper-1 {
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    padding: 10px;
+    position: absolute;
+    width: 289px; 
+    height: 51px; 
+    bottom: 220px;
+    left: 125px;
+}
+
+.login .input-wrapper-2 {
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    padding: 10px;
+    position: absolute;
+    width: 289px; 
+    height: 51px; 
+    bottom: 360px;
+    left: 125px;
+}
+
+
+

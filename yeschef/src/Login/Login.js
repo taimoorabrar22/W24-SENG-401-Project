@@ -1,4 +1,4 @@
-import "./Login.css"
+import "./Login.css";
 
 function Login() {
     return (
@@ -7,20 +7,11 @@ function Login() {
                 <div className="group">
                     <div className="overlap">
                         <div className="text-wrapper">PASSWORD</div>
+                        <div className="input-wrapper-1"></div> 
                         <div className="overlap-group">
-                            <img
-                                className="rectangle"
-                                alt="Rectangle"
-                                src="https://cdn.animaapp/projects/65d41c71641b9dafb8dc247e/releases/65d41cc6d92080865e1e8a25/img/rectangle-5-1.svg"
-                            ></img>
                             <div className="create-account">OR CREATE AN ACCOUNT</div>
                         </div>
-                        <div  className="text-wrapper-2">LOGIN</div>
-                        <img
-                            className="img"
-                            alt="Rectangle"
-                            src="https://cdn.animaapp/projects/65d41c71641b9dafb8dc247e/releases/65d41cc6d92080865e1e8a25/img/rectangle-5-1.svg"
-                        />
+                        <div className="text-wrapper-2">LOGIN</div>
                         <div className="overlap-group-warpper">
                             <div className="overlap-group-2">
                                 <div className="rectangle-2">
@@ -29,11 +20,7 @@ function Login() {
                             </div>
                         </div>
                         <div className="text-wrapper-4">USERNAME</div>
-                        <img
-                            className="rectangle-3"
-                            alt="Rectangle"
-                            src="https://cdn.animaapp/projects/65d41c71641b9dafb8dc247e/releases/65d41cc6d92080865e1e8a25/img/rectangle-5-1.svg"
-                        />
+                        <div className="input-wrapper-2"></div> 
                     </div>
                 </div>
                 <div className="overlap-wrapper">
@@ -44,7 +31,7 @@ function Login() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Login;
