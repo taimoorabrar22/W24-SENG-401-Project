@@ -1,5 +1,5 @@
-import './App.css';
-//import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import './WebHome.css';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -7,9 +7,9 @@ function App() {
       <div className="div">
         <div className="group">
           <div className="overlap-group">
-            <div className="rectangle">
-              <div className="text-wrapper">Log in</div>
-            </div>
+            <Link to="/login">
+            <button className="login-button">Log in</button>
+            </Link>
           </div>
           <div className="group-2">
             <div className="text-wrapper-2">Find Unique Recipes Fast</div>
