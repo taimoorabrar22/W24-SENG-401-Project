@@ -39,98 +39,77 @@
 }
 
 */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
+/* WebHome.css */
 
 .mainpage {
   background-color: #1b4235;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
-.mainpage .div {
+.div {
   background-color: #1b4235;
   height: 832px;
-  position: relative;
   width: 1280px;
 }
 
-.mainpage .group {
+/* .group {
   height: 66px;
   left: 543px;
   position: absolute;
   top: 50px;
   width: 197px;
-}
+} */
 
-
-.mainpage .overlap-group {
-  height: 66px;
-  position: relative;
-  width: 196px;
-}
-
-.mainpage .login-button {
-  color: #1b4235;
-  font-family: "Lao Sans Pro-Regular", Helvetica;
-  font-size: 35px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 9px;
-  width: 195px;
-  background-color: #edd3c5;
-  height: 66px;
-  left: 10px;
-  position: absolute;
-  top: 850px;
-  width: 194px;
-  cursor: pointer;
-}
-
-.mainpage .group-2 {
-  height: 183px;
+.group-2 {
+  display: flex;
+  flex-direction: column; /* Adjusted to column layout */
+  align-items: center;
+  height: auto; /* Removed absolute positioning height */
   left: 383px;
   position: absolute;
   top: 0;
   width: 518px;
 }
 
-.mainpage .text-wrapper-2 {
+.text-wrapper-2 {
   color: #edd3c5;
   font-family: "Lao Sans Pro-Regular", Helvetica;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
-  left: -525px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
   text-align: center;
-  top: 50px;
   width: 514px;
+  margin-top: 20px;
 }
 
-.mainpage .text-wrapper-3 {
+.text-wrapper-3 {
   color: #edd3c5;
   font-family: "Rozha One", Helvetica;
-  font-size: 100px;
+  font-size: 80px;
   font-weight: 400;
-  left: -525px;
-  top: 1000px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
   text-align: center;
   width: 513px;
   top: -200px;
+}
+
+.main-pic {
+  width: 500px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.LoginButton {
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  background-color: #edd3c5;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #1b4235;
 }
