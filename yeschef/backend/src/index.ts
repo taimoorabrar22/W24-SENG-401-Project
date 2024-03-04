@@ -7,6 +7,7 @@ import {connect} from "mongoose";
 
 //@ts-ignore
 import xssClean from "xss-clean";
+import { authRouter, recipeRouter } from "./routes";
 
 const app: Application = express();
 
@@ -15,6 +16,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 //set http headers
 app.use(helmet());
+
+app.use('/auth', authRouter)
+app.use('/recipe', recipeRouter)
+
+app.get('/ping', (req: Request, res: Response)=>{
+  res.send("pong")
+});
 
 app.all("*", async (req: Request, res: Response) => {
   res.status(404).json({
