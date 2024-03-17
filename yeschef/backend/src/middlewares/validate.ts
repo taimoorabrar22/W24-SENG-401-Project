@@ -1,10 +1,16 @@
 import { NextFunction, Request, Response } from "express";
+import { createRecipeSchema, getRecipeSchema, getUserRecipesSchema, joinSchema } from "../schema-validations";
 import { InferType } from "yup";
 
 
 //middleware to validate req data
 export const validate =
-  ( schema: any ) =>
+  (  schema: InferType<
+    | typeof createRecipeSchema
+    | typeof getRecipeSchema
+    | typeof getUserRecipesSchema
+    | typeof joinSchema
+  > ) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       await schema.validate({

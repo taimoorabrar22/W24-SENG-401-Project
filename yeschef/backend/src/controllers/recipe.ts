@@ -1,6 +1,71 @@
 import {Request, Response} from "express";
+import {UploadedFile} from "express-fileupload"
 import { Recipe  } from "../models";
 import { SEARCH_RECIPES, SEARCH_RECIPES_RESPONSE } from "src/@types";
+import { validateImageType } from "../utils";
+import { upload } from "../cloudinary";
+
+export const createRecipe = async(req: Request, res: Response) => {
+    if(!req?.user) {
+        return res.status(422).json({error: "Unable to process your request."});
+    }
+    if(!req.files || Object.keys(req.files).length === 0){
+        return res.status(400).json({error: "No files were uploaded."});
+    }
+
+    const image = req.files.image as UploadedFile
+
+    if(!validateImageType(image)) {
+        return res.status(422).json({error: "Image type not supported"});
+    }
+
+    // const fileName = Date.now() + image.name;
+    // const pathToFile = path.resolve(
+    //     __dirname + "../../../assets/" + fileName
+    // );
+
+    // calling cloudinary
+    let imageUrl: string;
+    let imageId: string;
+
+    try {
+        const res = await upload(image.data, "Images");
+        imageUrl = res.secure_url;
+        imageId = res.public_id;
+      } catch (error: any) {
+        console.log(error, "CLOUDINARY ERROR");
+        return res.status(400).json({ error: error?.error });
+      }
+
+      const {
+        title,
+        note,
+        description,
+        ingredients,
+      }: { title: string; note: string; description: string; ingredients: string } =
+        req.body;
+    
+      try {
+        const recipe = await Recipe.create({
+          user: req.user,
+          title,
+          note,
+          description,
+          ingredients,
+          image: {
+            url: imageUrl,
+            id: imageId,
+          },
+        });
+        return res.status(200).json({ message: "created successfully", ...recipe });
+      } catch (error) {
+        console.log(error);
+        return res
+          .status(500)
+          .json({ error: "An error occured while processing your request" });
+      }
+   
+};
 
 export const searchRecipe = async (req: Request, res: Response) => {
     const {q} = req.query;
@@ -37,7 +102,9 @@ export const searchRecipe = async (req: Request, res: Response) => {
         }
     ];
 
-    const recipes: SEARCH_RECIPES[] = await Recipe.aggregate(pipeline);
+    const recipes: SEARCH_RECIPES[] = await Recipe.aggregate(pipeline)
+    .sort({_id: -1,})
+    .exec();
 
     let response: SEARCH_RECIPES_RESPONSE[] = [];
 

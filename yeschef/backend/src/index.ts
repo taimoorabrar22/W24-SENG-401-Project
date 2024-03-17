@@ -3,7 +3,10 @@ dotenv.config();
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
+import passport from "passport";
 import {connect} from "mongoose";
+import fileUpload from "express-fileupload"
+import { authenticate } from "./config/passport";
 
 //@ts-ignore
 import xssClean from "xss-clean";
@@ -16,6 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 //set http headers
 app.use(helmet());
+
+app.use(fileUpload({
+  limits: {fileSize: 50*1024*1024},
+  abortOnLimit: true,
+}))
+
+app.use(passport.initialize());
+
+//Passport conifg 
+authenticate(passport);
 
 app.use('/auth', authRouter)
 app.use('/recipe', recipeRouter)
