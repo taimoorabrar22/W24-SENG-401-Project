@@ -1,6 +1,9 @@
 import { Suspense, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Landing } from './pages/Landing';
+import { Home } from './pages/Dashboard';
+import { DashboardLayout } from './layouts';
+import { UILoader } from './components/loaders';
 
 function App() {
 const router = createBrowserRouter([
@@ -9,11 +12,22 @@ const router = createBrowserRouter([
     element: <Landing />,
     errorElement: <div>Error Page</div>,
   },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />,
+    errorElement: <div>Error Page 2</div>,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Home />
+      }
+    ]
+  },
 ]);
   return (
     <div className="container h-[100vh] w-[100vw] max-w-full">
-    <Suspense fallback={<div>Loading</div>}>
-      <RouterProvider router={router} fallbackElement={<div>Fallback</div>} />
+    <Suspense fallback={<UILoader />}>
+      <RouterProvider router={router} fallbackElement={<UILoader />} />
     </Suspense>
   </div>
   )
