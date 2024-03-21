@@ -30,7 +30,7 @@ export const RecipeCard = ({
         <Button
           title="View  More"
           handleClick={() => handleViewMore(_id)}
-          className={`bg-customPink text-white hover:bg-orange-600 
+          className={`bg-customPink text-white hover:bg-customPink2
           py-1 px-2 w-[50%]
           `}
         />

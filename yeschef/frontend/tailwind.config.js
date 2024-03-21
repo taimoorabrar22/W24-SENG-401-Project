@@ -14,6 +14,7 @@ export default {
         customBlue: '#007bff', // Example custom color
         customGreen: '#142917', // Another example custom color
         customPink: '#C71585',  // Yet another example custom color
+        customPink2: '#f542d4',
         customBeige: '#8a6f24',  // Yet another example custom color
         customBeige2: '#C6AA58'
       },

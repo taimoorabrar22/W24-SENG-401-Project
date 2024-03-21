@@ -46,13 +46,6 @@ export const MyRecipes = () => {
   return (
     <Suspense fallback={<UILoader />}>
       <div className="text-white w-full h-full">
-        <SearchBox
-          title="My Recipes"
-          onSearch={handleSearch}
-          setQuery={setQuery}
-          query={query}
-          disabled={!data?.length}
-        />
         {loading ? (
           <SearchLoader />
         ) : (

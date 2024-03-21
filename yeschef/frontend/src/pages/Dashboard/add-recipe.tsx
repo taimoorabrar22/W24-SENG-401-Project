@@ -87,7 +87,7 @@ export const AddRecipe = () => {
             placeholder="Name of the recipe"
             type="text"
             handleChange={onChange}
-            className={`bg-zinc-900 text-white py-1 px-4 w-full placeholder:text-sm hover:bg-zinc-800 cursor-pointer focus:outline-none`}
+            className={`bg-customBeige text-white py-1 px-4 w-full placeholder:text-sm placeholder:text-white hover:bg-customBeige2 cursor-pointer focus:outline-none`}
           />
 
           <TextArea
@@ -96,7 +96,7 @@ export const AddRecipe = () => {
             placeholder="Ingredients"
             onChange={onChange}
             rows={4}
-            className={`bg-zinc-900 py-1 px-4 w-full placeholder:text-sm hover:bg-zinc-800 cursor-pointer focus:outline-none mt-2`}
+            className={`bg-customBeige py-1 px-4 w-full placeholder:text-sm placeholder:text-white hover:bg-customBeige2 cursor-pointer focus:outline-none mt-2`}
           />
 
           <TextArea
@@ -105,7 +105,7 @@ export const AddRecipe = () => {
             placeholder="Recipe description and how to make it"
             onChange={onChange}
             rows={6}
-            className={`bg-zinc-900 py-1 px-4 w-full placeholder:text-sm hover:bg-zinc-800 cursor-pointer focus:outline-none`}
+            className={`bg-customBeige py-1 px-4 w-full placeholder:text-sm placeholder:text-white hover:bg-customBeige2 cursor-pointer focus:outline-none`}
           />
         </div>
         <div className="w-full flex flex-col gap-2">
@@ -114,7 +114,7 @@ export const AddRecipe = () => {
             handleOnDrop={handleOnDrop}
             handleFile={handleFile}
             name={image?.name as string}
-            className={`bg-zinc-900 py-1 px-4 w-full  hover:bg-zinc-800 cursor-pointer focus:outline-none`}
+            className={`bg-customBeige  py-1 px-4 w-full  hover:bg-customBeige2 cursor-pointer focus:outline-none`}
           />
           <TextArea
             disabled={loading}
@@ -122,12 +122,12 @@ export const AddRecipe = () => {
             placeholder="Notes"
             onChange={onChange}
             rows={4}
-            className={`bg-zinc-900 py-1 px-4 w-full placeholder:text-sm hover:bg-zinc-800 cursor-pointer focus:outline-none`}
+            className={`bg-customBeige py-1 px-4 w-full placeholder:text-sm hover:bg-customBeige placeholder:text-white cursor-pointer focus:outline-none`}
           />
           <Button
             disabled={loading}
             title={loading ? "Publishing..." : "Publish Recipe"}
-            className={`bg-orange-500 text-white hover:bg-orange-600 py-1 px-6 w-full mb-4 `}
+            className={`bg-customPink text-white hover:bg-customPink2 py-1 px-6 w-full mb-4 `}
             type="submit"
           />
         </div>

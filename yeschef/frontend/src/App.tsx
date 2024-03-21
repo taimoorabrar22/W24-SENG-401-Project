@@ -1,21 +1,22 @@
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Landing } from './pages/Landing';
-import { AddRecipe, Home, MyRecipes } from './pages/Dashboard';
+import { AddRecipe, Home, More, MyRecipes } from './pages/Dashboard';
 import { DashboardLayout } from './layouts';
 import { UILoader } from './components/loaders';
+import { ErrorPage } from './pages/Error';
 
 function App() {
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Landing />,
-    errorElement: <div>Error Page</div>,
+    errorElement: <ErrorPage />,
   },
   {
     path: '/dashboard',
     element: <DashboardLayout />,
-    errorElement: <div>Error Page 2</div>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/dashboard',
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myrecipe',
         element: <MyRecipes />
+      },
+      {
+        path: '/dashboard/recipe/:id',
+        element: <More />
       }
     ]
   },

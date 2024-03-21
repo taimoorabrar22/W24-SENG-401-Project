@@ -1,12 +1,28 @@
-import { FormEvent, useContext, useState } from "react"
+import { FormEvent, useContext, useLayoutEffect, useState } from "react"
 import recipe1 from "../../assets/recipe3.jpg"
+import logo from "../../assets/logo-green.png"
+
 import { Button, Form, Input } from "../../components"
 import { AUTH_TYPE, IPAYLOAD } from "../../@types"
 import { validateEmail } from "../../utils"
 import { AuthenticationContext } from "../../context"
 import cogoToast from "cogo-toast"
+import { useNavigate } from "react-router-dom"
+
 
 export const Landing = () => {
+    const navigate = useNavigate();
+
+    //protecting this route
+    //can be done in a higher order component
+    useLayoutEffect(() => {
+      if (
+        !!sessionStorage.getItem("token") &&
+        !!sessionStorage.getItem("email")
+      ) {
+        navigate("/dashboard");
+      }
+    }, []);
     const { loading, onLogin } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [state, setState] = useState<IPAYLOAD>({ email: '', password: "" })
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -31,10 +47,12 @@ export const Landing = () => {
                     onSubmit={handleSubmit}
                 >
                     <div className="flex flex-col gap-2  w-full md:w-[50%]">
-                        <h2 className="text-white font-extrabold text-5xl text-center mb-1">
-                            Yes Chef
-                        </h2>
-                        <h2 className="text-customBeige text-xl text-center italic mb-1">
+                    <img
+                    src={logo}
+                    alt="A dish with recipes"
+                    className="w-full h-full object-center object-cover"
+                />
+                        <h2 className="text-customPink text-xl text-center italic mb-1">
                             The exotic recipe platform
                         </h2>
                         <Input

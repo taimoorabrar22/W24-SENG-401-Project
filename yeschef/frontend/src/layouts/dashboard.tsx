@@ -5,6 +5,7 @@ import { NavLink, Outlet, useLocation, useNavigate, useParams } from "react-rout
 import { Button } from "../components";
 import { MdOutlineClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
+import logo from "../assets/logo-gold.png"
 
 const routes = [
     { name: "Home", to: "/dashboard" },
@@ -32,6 +33,11 @@ export const DashboardLayout = () => {
                 <h2 className="text-white font-bold text-3xl hover:text-customPink text-center">
                     <NavLink to="/dashboard"> Yes Chef</NavLink>
                 </h2>
+                <img
+                    src={logo}
+                    alt="A dish with recipes"
+                    className="object-center w-38 h-10 md:h-20"
+                />
             </div>
             <div className="text-white md:hidden">
           {isOpen ? (
