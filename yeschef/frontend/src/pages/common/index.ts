@@ -1,2 +1,3 @@
 import { NoRecipe } from "./no-recipe";
-export {NoRecipe}
+import { ImageUploader } from "./image-uploader";
+export {NoRecipe, ImageUploader}

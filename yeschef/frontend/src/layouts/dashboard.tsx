@@ -20,7 +20,7 @@ export const DashboardLayout = () => {
             navigate('/');
         }
     }, [])
-    const { onLogout, loading } = useContext(AuthenticationContext) as AUTH_TYPE;
+    const { onLogout, loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const handleIsOpen = () => {
         setIsOpen((prev) => !prev);
@@ -42,7 +42,7 @@ export const DashboardLayout = () => {
         </div>
         </div>
         <div className="flex flex-col md:flex-row w-full h-full z-10 relative">
-            <div className="hidden md:block bg-customBeige2 h-full w-[20%]  border-2 border-gray-500">
+            <div className="hidden md:block bg-customBeige2 h-full w-[20%]  border-2 border-white">
                 <div className="md:flex gap-8 items-start w-full p-3">
                     <img
                         className="h-16 w-16 object-cover rounded-full"
@@ -50,7 +50,7 @@ export const DashboardLayout = () => {
                         alt="A image"
                     />
                     <div>
-                        <p className="text-customPink italic text-2xl"> taimoorabrar </p>
+                        <p className="text-customPink italic text-md"> {user} </p>
                     </div>
                 </div>
                 <div className="flex flex-col gap-y-1  mt-3">
@@ -60,8 +60,8 @@ export const DashboardLayout = () => {
                         to={to}
                         className={({ isActive }) =>
                             isActive && pathname === to
-                                ? "text-white font-thin text-2xl bg-customPink p-4"
-                                : "text-white font-thin text-2xl hover:bg-customPink p-4"
+                                ? "text-white font-thin text-xl border-2 border-white bg-customPink p-4"
+                                : "text-white font-thin text-xl border-2 border-white hover:bg-customPink p-4"
                         }
                     >
                         {name}
@@ -70,7 +70,7 @@ export const DashboardLayout = () => {
                 <Button
                     title="Logout"
                     handleClick={onLogout}
-                    className="text-white font-thin text-2xl text-left hover:bg-customPink p-4"
+                    className="text-white border-2 border-white font-thin text-xl text-left hover:bg-customPink p-4"
                 />
             </div>
             </div>
@@ -84,7 +84,7 @@ export const DashboardLayout = () => {
                 alt=""
               />
               <div>
-                <p className="text-customPink text-2xl">taimoorabrar</p>
+                <p className="text-customPink text-md">{user} </p>
               </div>
             </div>
             <div className="flex flex-col gap-y-1  mt-3">

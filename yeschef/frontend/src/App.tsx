@@ -1,7 +1,7 @@
 import { Suspense, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Landing } from './pages/Landing';
-import { Home } from './pages/Dashboard';
+import { AddRecipe, Home, MyRecipes } from './pages/Dashboard';
 import { DashboardLayout } from './layouts';
 import { UILoader } from './components/loaders';
 
@@ -20,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Home />
+      },
+      {
+        path: '/dashboard/addrecipe',
+        element: <AddRecipe />
+      }, 
+      {
+        path: '/dashboard/myrecipe',
+        element: <MyRecipes />
       }
     ]
   },

@@ -17,9 +17,6 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "types": [
-      "node"
-    ],
     "typeRoots": [
       "@types"
     ],

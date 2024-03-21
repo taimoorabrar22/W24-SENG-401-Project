@@ -46,13 +46,6 @@ export const Home = () => {
         <Suspense fallback={<UILoader />}>
           <div className="text-white w-full h-full">
             <SearchBox {...props} />
-            {/* <SearchBox
-              title="Recipe"
-              onSearch={handleSearch}
-              setQuery={setQuery}
-              query={query}
-              disabled={!data?.data}
-            /> */}
             {loading ? (
               <SearchLoader />
             ) : (

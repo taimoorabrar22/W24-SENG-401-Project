@@ -1,2 +1,3 @@
 import { validateEmail } from "./validate-email";
-export {validateEmail};
+import { validateImageType } from "./validate-image";
+export {validateEmail, validateImageType};

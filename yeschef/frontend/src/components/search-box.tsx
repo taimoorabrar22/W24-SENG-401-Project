@@ -27,8 +27,8 @@ export const SearchBox = ({
           handleChange={(e: FormEvent<HTMLInputElement>) =>
             setQuery(e.currentTarget.value)
           }
-          className={`bg-zinc-900 py-1 px-4 w-full shadow-xl  placeholder:text-sm 
-        hover:bg-zinc-800 cursor-pointer focus:outline-none my-3
+          className={`bg-customBeige2 py-1 px-4 w-full shadow-xl text-white placeholder:text-sm placeholder:text-white
+        hover:bg-customPink cursor-pointer focus:outline-none my-3
         `}
         />
       </Form>
