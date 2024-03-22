@@ -20,7 +20,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ["Fraunces", "serif"],
+      sans: ["Dancing Script", "serif"],
     },
   },
   plugins: [],

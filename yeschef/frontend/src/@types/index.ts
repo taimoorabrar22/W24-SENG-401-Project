@@ -36,5 +36,6 @@ export interface AUTH_TYPE {
     user: string;
     loading: boolean;
     onLogin: (payload: IPAYLOAD) => void;
+    onRegister: (payload: IPAYLOAD) => void;
     onLogout: () => void;
 }

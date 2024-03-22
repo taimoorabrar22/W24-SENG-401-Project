@@ -6,7 +6,7 @@ export const AuthenticationContext = createContext<AUTH_TYPE | null>(null);
 
 export const AuthenticationContextProvider = ({children}: {children: ReactNode}) => {
 
-    const { loading, login } = useAuth();
+    const { loading, login, register } = useAuth();
     const [user, setUser] = useState<string>("");
   
     useEffect(() => {
@@ -33,6 +33,16 @@ export const AuthenticationContextProvider = ({children}: {children: ReactNode})
         }
       };
 
+      const onRegister = async (payload: {
+        email: string;
+        password: string;
+      }): Promise<unknown> => {
+        const response: ILOGINRESPONSE = await register(payload);
+        if (response) {
+          return (window.location.href = "/");
+        }
+      };
+
       const onLogout = (): any => {
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("email");
@@ -46,6 +56,7 @@ export const AuthenticationContextProvider = ({children}: {children: ReactNode})
             user,
             loading,
             onLogin,
+            onRegister,
             onLogout,
           }}
         >

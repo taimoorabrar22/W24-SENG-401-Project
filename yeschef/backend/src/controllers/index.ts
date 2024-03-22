@@ -1,4 +1,4 @@
 import { searchRecipe, getRecipe, getAllRecipes, createRecipe} from "./recipe";
-import { registerOrLogin } from "./auth";
+import { register, login } from "./auth";
 
-export {registerOrLogin, searchRecipe, getRecipe, getAllRecipes, createRecipe};
+export {register, login, searchRecipe, getRecipe, getAllRecipes, createRecipe};

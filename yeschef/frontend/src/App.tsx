@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Landing } from './pages/Landing';
+import { Register } from './pages/Register';
 import { AddRecipe, Home, More, MyRecipes } from './pages/Dashboard';
 import { DashboardLayout } from './layouts';
 import { UILoader } from './components/loaders';
@@ -11,6 +12,11 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Landing />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
     errorElement: <ErrorPage />,
   },
   {

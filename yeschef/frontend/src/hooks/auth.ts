@@ -11,6 +11,23 @@ export const useAuth = () => {
   }): Promise<AxiosResponse<ILOGINRESPONSE> | any> => {
     try {
       setLoading(true);
+      const response = await instance.post("/auth/login", payload);
+      if (response) {
+        return response?.data;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const register = async (payload: {
+    email: string;
+    password: string;
+  }): Promise<AxiosResponse<ILOGINRESPONSE> | any> => {
+    try {
+      setLoading(true);
       const response = await instance.post("/auth/join", payload);
       if (response) {
         return response?.data;
@@ -25,5 +42,6 @@ export const useAuth = () => {
   return {
     loading,
     login,
+    register,
   };
 };
