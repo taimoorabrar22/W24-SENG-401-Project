@@ -38,10 +38,21 @@ const joinSchema = yup.object({
   }),
 });
 
+const updateSchema = yup.object({
+  body: yup.object({
+    email: yup.string().email().required("Email is required"),
+    newPassword: yup
+      .string()
+      .min(7, "password must be greater than 6"),
+      newEmail:  yup.string().email()
+  }),
+});
+
 export {
   createRecipeSchema,
   getRecipeSchema,
   getUserRecipesSchema,
   joinSchema,
+  updateSchema,
   searchRecipeSchema,
 };
