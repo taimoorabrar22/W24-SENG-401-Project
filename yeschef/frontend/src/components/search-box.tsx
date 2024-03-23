@@ -17,8 +17,9 @@ export const SearchBox = ({
 }) => {
   return (
     <>
-      <h2 className="font-extrabold text-xl ">{title}</h2>
-      <Form onSubmit={onSearch}>
+    <div className="flex w-[70%] mx-auto self-center pt-[10px] justify-evenly pb-[10px] mb-[20px] bg-[#EDD3C5] rounded-lg" >
+      <h2 className="text-[#1b4235] text-[30px]">{title}</h2>
+      <Form onSubmit={onSearch} className="w-[70%]">
         <Input
           disabled={disabled}
           placeholder="Search for a recipe"
@@ -27,11 +28,11 @@ export const SearchBox = ({
           handleChange={(e: FormEvent<HTMLInputElement>) =>
             setQuery(e.currentTarget.value)
           }
-          className={`bg-customBeige2 py-1 px-4 w-full shadow-xl text-white placeholder:text-sm placeholder:text-white
-        hover:bg-customPink cursor-pointer focus:outline-none my-3
+          className={`w-full h-[50px] overflow-hidden bg-[#F3F3F3] text-[#1b4235] font-mono transition-all duration-[0.5s] text-[25px] pl-[0.8em] rounded-[10px] border-[3px] border-solid  hover:border-[#1b4235] hover:bg-[white] hover:border-[3px] hover:border-solid;
         `}
         />
       </Form>
+     </div>
     </>
   );
 };

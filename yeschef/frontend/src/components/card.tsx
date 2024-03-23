@@ -68,10 +68,11 @@ export const Card = ({
         isFull ? "md:w-[50%]" : "md:w-[14rem] "
       } bg-customBeige  
       transition ease-in-out delay-150
-      hover:translate-x-6 
-      hover:scale-100
+      hover:
+      hover:scale-105
       duration-300
       mb-4
+      rounded-lg
       `}
     >
       <img
@@ -81,7 +82,8 @@ export const Card = ({
           isFull ? "md:w-full" : "md:w-[14rem] "
         } h-full md:[10rem] ${
           isFull ? "md:h-[20rem]" : "md:h-[14rem]"
-        } object-cover`}
+        } object-cover
+        rounded-lg`}
       />
       <div
         className={`p-2 bg-customBeige  w-full ${
