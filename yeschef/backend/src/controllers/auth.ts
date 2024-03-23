@@ -54,3 +54,53 @@ export const login = async (req: Request, res: Response) => {
             .json({ error: "An error occured while processing your request " })
     }
 };
+
+export const update = async (req: Request, res: Response) => {
+    const { email, newEmail, newPassword }: { email: string;  newEmail: string; newPassword: string } = req.body;
+
+    try {
+        const _user = await User.findOne({ email }).select("+password").exec();
+    
+
+        if (_user) {
+      
+            if(newPassword!=null){
+                try {
+                const hashedPassword =await bcrypt.hash(newPassword, CONSTANTS.SALT) 
+
+                // Update the user's password in the database
+                const result = await User.updateOne({ _id: _user?.id }, { password: hashedPassword });
+                return res
+                .status(201)
+                .json("User password has been updated !")
+              } catch (error) {
+                console.error('Error updating password:', error);
+                return res.status(500)
+                .json({ error: "An error occured while processing your request " })
+              }
+            }
+            if(newEmail!=null){
+                try {    
+                    // Update the user's email in the database
+                    const result = await User.updateOne({ _id: _user?.id }, { email: newEmail })
+                    return res
+                    .status(201)
+                    .json("User email has been updated !")
+                  } catch (error) {
+                    console.error('Error updating password:', error);
+                    return res.status(500)
+                    .json({ error: "An error occured while processing your request " })
+                  }
+            }
+        } else {
+            return res.status(400).json({ error: "User not found, try creating a user !" });
+        }
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500)
+            .json({ error: "An error occured while processing your request " })
+    }
+};
+
+
