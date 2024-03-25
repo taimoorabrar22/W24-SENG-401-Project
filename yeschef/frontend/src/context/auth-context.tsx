@@ -1,12 +1,12 @@
 import { createContext, useContext, ReactNode, useState, useEffect } from "react";
-import { AUTH_TYPE, ILOGINRESPONSE } from "../@types";
+import { AUTH_TYPE, ILOGINRESPONSE, IUpdateResponse } from "../@types";
 import { useAuth } from "../hooks";
 
 export const AuthenticationContext = createContext<AUTH_TYPE | null>(null);
 
 export const AuthenticationContextProvider = ({children}: {children: ReactNode}) => {
 
-    const { loading, login, register } = useAuth();
+    const { loading, login, register, update } = useAuth();
     const [user, setUser] = useState<string>("");
   
     useEffect(() => {
@@ -30,6 +30,26 @@ export const AuthenticationContextProvider = ({children}: {children: ReactNode})
     
           setUser(response?.email);
           return (window.location.href = "/dashboard");
+        }
+      };
+
+      const onUpdate = async (payload: {
+        newEmail: string;
+        email: string;
+        newPassword: string;
+      }): Promise<unknown> => {
+        console.log(payload);
+        const response: IUpdateResponse = await update(payload);
+        if (response) {
+          setUser(response?.email);
+          sessionStorage.setItem("email", response?.email);
+          if(response.newEmail!=''){
+            sessionStorage.setItem("email", response?.newEmail);
+            setUser(response?.newEmail);
+          }
+          sessionStorage.setItem("token", response?.token);
+          sessionStorage.setItem("id", response?.id);
+          return (window.location.href = "/dashboard/userProfile");
         }
       };
 
@@ -58,6 +78,7 @@ export const AuthenticationContextProvider = ({children}: {children: ReactNode})
             onLogin,
             onRegister,
             onLogout,
+            onUpdate,
           }}
         >
           {children}

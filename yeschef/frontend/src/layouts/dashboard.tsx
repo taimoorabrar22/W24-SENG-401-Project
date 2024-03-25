@@ -20,7 +20,10 @@ export const DashboardLayout = () => {
         if (!sessionStorage.getItem('email') && !sessionStorage.getItem('token')) {
             navigate('/');
         }
-    }, [])
+    }, []);
+    const goToProfile = () => {
+        navigate("/dashboard/userProfile");
+      };
     const { onLogout, loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const handleIsOpen = () => {
@@ -66,7 +69,9 @@ export const DashboardLayout = () => {
                         alt="A image"
                     />
                     <div>
-                        <p className="text-customPink italic text-md"> {user} </p>
+                    <h2 className="text-white font-bold text-md hover:text-customPink text-center">
+                    <NavLink to="/dashboard/userProfile"> {user} </NavLink>
+                </h2>
                     </div>
                 </div>
             </div>

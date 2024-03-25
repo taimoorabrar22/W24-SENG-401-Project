@@ -10,6 +10,8 @@ const signToken = (id: string) => {
     });
 };
 
+const updateMessage = "Parameters have been updated";
+
 export const register = async (req: Request, res: Response) => {
     const { email, password }: { email: string; password: string } = req.body;
 
@@ -64,28 +66,26 @@ export const update = async (req: Request, res: Response) => {
 
         if (_user) {
       
-            if(newPassword!=null){
+            if(newPassword!=''){
                 try {
                 const hashedPassword =await bcrypt.hash(newPassword, CONSTANTS.SALT) 
 
                 // Update the user's password in the database
                 const result = await User.updateOne({ _id: _user?.id }, { password: hashedPassword });
-                return res
-                .status(201)
-                .json("User password has been updated !")
+                const token = signToken(_user?._id);
+                return res.status(200).json({ token, email, id: _user?._id, newEmail });
               } catch (error) {
                 console.error('Error updating password:', error);
                 return res.status(500)
                 .json({ error: "An error occured while processing your request " })
               }
             }
-            if(newEmail!=null){
+            if(newEmail!=''){
                 try {    
                     // Update the user's email in the database
                     const result = await User.updateOne({ _id: _user?.id }, { email: newEmail })
-                    return res
-                    .status(201)
-                    .json("User email has been updated !")
+                    const token = signToken(_user?._id);
+                    return res.status(200).json({ token, email, id: _user?._id, newEmail });
                   } catch (error) {
                     console.error('Error updating password:', error);
                     return res.status(500)

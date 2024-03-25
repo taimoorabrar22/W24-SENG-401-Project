@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Landing } from './pages/Landing';
 import { Register } from './pages/Register';
-import { AddRecipe, Home, More, MyRecipes } from './pages/Dashboard';
+import { AddRecipe, Home, More, MyRecipes, UpdateEmail, UpdatePassword, UserProfile } from './pages/Dashboard';
 import { DashboardLayout } from './layouts';
 import { UILoader } from './components/loaders';
 import { ErrorPage } from './pages/Error';
@@ -35,6 +35,18 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myrecipe',
         element: <MyRecipes />
+      },
+      {
+        path: '/dashboard/userProfile',
+        element: <UserProfile />
+      },
+      {
+        path: '/dashboard/updateEmail',
+        element: <UpdateEmail />
+      },
+      {
+        path: '/dashboard/updatePassword',
+        element: <UpdatePassword />
       },
       {
         path: '/dashboard/recipe/:id',

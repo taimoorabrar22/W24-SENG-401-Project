@@ -27,10 +27,25 @@ export interface ILOGINRESPONSE {
     id: string;
 }
 
+export interface IUpdateResponse {
+    id: string;
+    newEmail: string,
+    token: string,
+    email: string,
+}
+
 export interface IPAYLOAD {
     email: string;
     password: string;
 }
+
+export interface IPAYLOADUPDATE {
+    newEmail: string;
+    email: string;
+    newPassword: string;
+}
+
+
 
 export interface AUTH_TYPE {
     user: string;
@@ -38,4 +53,5 @@ export interface AUTH_TYPE {
     onLogin: (payload: IPAYLOAD) => void;
     onRegister: (payload: IPAYLOAD) => void;
     onLogout: () => void;
+    onUpdate: (payload: IPAYLOADUPDATE) => void;
 }
