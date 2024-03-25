@@ -24,17 +24,18 @@ export const RecipeCard = ({
       ingredients={ingredients}
       description={description}
       email={user}
-      avatar="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2554&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      avatar="https://i.pinimg.com/originals/00/f6/8b/00f68bbb421e25454c0447bae88b537b.jpg"
     >
       <div className="flex justify-end">
         <Button
           title="View  More"
-          handleClick={() => handleViewMore(_id)}
-          className={`bg-customPink text-[#1b4235] hover:bg-customPink2
-          py-1 px-2 w-[50%]
+        handleClick={() => handleViewMore(_id)}
+          
+          className={`border-2 py-1 bg-[#EDD3C5] text-[#1b4235] px-2 border-black rounded-xl text-[15px] text-center hover:bg-[#2F4858] hover:text-white transition max-w-80 justify ease-in-out duration-300 hover:scale-105 hover:shadow-lg
           `}
         />
       </div>
+
     </Card>
   );
 };

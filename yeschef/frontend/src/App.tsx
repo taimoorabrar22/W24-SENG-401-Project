@@ -56,7 +56,7 @@ const router = createBrowserRouter([
   },
 ]);
   return (
-    <div className="container h-[100vh] w-[100vw] max-w-full">
+    <div className="container md:h-[100vh] h-[100%]  w-[100vw] max-w-full">
     <Suspense fallback={<UILoader />}>
       <RouterProvider router={router} fallbackElement={<UILoader />} />
     </Suspense>

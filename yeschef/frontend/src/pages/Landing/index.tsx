@@ -68,7 +68,7 @@ export const Landing = () => {
                             type="password"
                             className={`w-[70%] h-20 overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[25px] mt-10 pl-[0.8em] rounded-[10px] border-[3px] border-solid  hover:border-[#1b4235] hover:bg-[white] hover:border-[3px] hover:border-solid;`}
                         />
-                        <div className="w-full md:w-[50%] m-auto flex flex-col gap-2">
+                        <div className="w-[50%]  m-auto flex flex-col gap-2">
                             <Button
                                 title={loading ? "Loading" : "Login"}
                                 className={`border-2 py-4 px-6 bg-[#EDD3C5] border-black rounded-xl text-[#1b4235] text-[30px] hover:bg-[#2F4858] mt-[30px] hover:text-white transition ease-in-out duration-300 hover:scale-105 hover:shadow-lg`}

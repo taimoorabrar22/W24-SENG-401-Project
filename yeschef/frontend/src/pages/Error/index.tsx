@@ -9,14 +9,16 @@ export const ErrorPage = () => {
     navigate("/");
   };
   return (
-    <div className="w-[100vw] h-[100vh] flex items-center justify-center flex-col bg-customBeige">
-      <h1 className="text-lg font-extrabold text-white">Oops!</h1>
-      <p className="text-white">Sorry, an unexpected error has occurred.</p>
+    <div className="w-[100vw] h-[auto] md:h-[100%] flex items-center justify-center flex-col bg-[#1b4235]">
+      <img src="https://i.ibb.co/jwtgzqf/image-removebg-preview-3.png" alt="image-removebg-preview-3" />
+      <div className="text-center">
+      <h1 className="text-lg font-extrabold text-white text-[73px] m-[30px]">Oops!</h1>
+      <h1 className="text-white text-[73px]">Sorry, an unexpected error has occurred.</h1>
+      </div>
       <Button
         title="Click to reload"
         handleClick={handleNavigate}
-        className={`bg-customPink text-white hover:bg-customPink2
-          py-1 px-2 w-[50%]
+        className={`border-2 py-4 px-6 border-black bg-[#EDD3C5] rounded-xl hover:bg-[#2F4858] hover:text-white transition ease-in-out duration-300 hover:scale-105 ml-[20px] mr-[20px] hover:shadow-lg
           `}
       />
     </div>
