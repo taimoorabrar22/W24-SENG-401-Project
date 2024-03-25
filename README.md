@@ -34,6 +34,8 @@ git clone https://github.com/maheen-raza/W24-SENG-401-Project.git
 2. Install and run locally
 
 - Front end
+  Note: Please contact author for required .env file as the frontend will not run without it
+  
  ```bash
 cd yeschef
 cd frontend
@@ -41,6 +43,8 @@ yarn install
 yarn dev
 ```
 - Backend
+  Note: Please contact author for required .env file as the backend will not run without it
+  
  ```bash
 cd yeschef
 cd backend
