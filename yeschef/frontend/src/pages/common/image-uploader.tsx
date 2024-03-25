@@ -21,8 +21,8 @@ export const ImageUploader = ({
         onDrop={handleOnDrop}
         className="flex flex-col items-center justify-between p-4"
       >
-        <p className="font-light text-lg">Add an image</p>
-        <p className="font-light text-lg">Drag and drop image here....</p>
+        <p className="font-light md:text-lg text-[12px]">Add an image</p>
+        <p className="font-light md:text-lg text-[12px]">Drag and drop image here....</p>
         <p>or</p>
         <label
           className="font-light text-lg text-customPink hover:cursor-pointer"

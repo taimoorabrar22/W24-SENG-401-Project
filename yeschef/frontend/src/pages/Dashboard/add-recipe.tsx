@@ -73,12 +73,12 @@ export const AddRecipe = () => {
   };
 
   return (
-    <div className="text-white">
-      <h2 className="font-extrabold text-xl">Add a recipe</h2>
+    <div className="text-[#1b4235] bg-[#EDD3C5] mb-[20px] md:mt-[10px] h-[auto] pl-[40px] md:h-[100%] pr-[40px] rounded-xl">
+      <h2 className="text-[#1b4235] md:text-[55px] text-[30px] pt-10 font-semibold leading-[normal] text-center  ">Add a recipe</h2>
 
       <Form
         onSubmit={onSubmit}
-        className={`mt-3 flex flex-col gap-3 md:flex-row`}
+        className={`mt-3 flex flex-col gap-[10px] md:gap-[30px] md:flex-row`}
       >
         <div className="w-full">
           <Input
@@ -87,7 +87,7 @@ export const AddRecipe = () => {
             placeholder="Name of the recipe"
             type="text"
             handleChange={onChange}
-            className={`bg-customBeige text-white py-1 px-4 w-full placeholder:text-sm placeholder:text-white hover:bg-customBeige2 cursor-pointer focus:outline-none`}
+            className={`w-[100%] h-20 overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[16px] md:text-[25px] mt-5 md:mt-10 pl-[0.8em] rounded-[10px] border-[5px] border-solid  hover:border-[#2F4858] hover:bg-[white] hover:border-[5px] hover:border-solid;`}
           />
 
           <TextArea
@@ -96,7 +96,7 @@ export const AddRecipe = () => {
             placeholder="Ingredients"
             onChange={onChange}
             rows={4}
-            className={`bg-customBeige py-1 px-4 w-full placeholder:text-sm placeholder:text-white hover:bg-customBeige2 cursor-pointer focus:outline-none mt-2`}
+            className={`w-[100%] overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[16px] md:text-[25px] mt-5 pl-[0.8em] md:mt-10 rounded-[10px] border-[5px] border-solid  hover:border-[#2F4858] hover:bg-[white] hover:border-[5px] hover:border-solid`}
           />
 
           <TextArea
@@ -105,16 +105,16 @@ export const AddRecipe = () => {
             placeholder="Recipe description and how to make it"
             onChange={onChange}
             rows={6}
-            className={`bg-customBeige py-1 px-4 w-full placeholder:text-sm placeholder:text-white hover:bg-customBeige2 cursor-pointer focus:outline-none`}
+            className={`w-[100%] overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[16px] md:text-[25px] mt-5 md:mt-10 pl-[0.8em] rounded-[10px] border-[5px] border-solid  hover:border-[#2F4858] hover:bg-[white] hover:border-[5px] hover:border-solid`}
           />
         </div>
-        <div className="w-full flex flex-col gap-2">
+        <div className="w-full flex flex-col justify-center gap-2">
           <ImageUploader
             handleDragOver={handleOnDragOver}
             handleOnDrop={handleOnDrop}
             handleFile={handleFile}
             name={image?.name as string}
-            className={`bg-customBeige  py-1 px-4 w-full  hover:bg-customBeige2 cursor-pointer focus:outline-none`}
+            className={`w-[100%] overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[16px] md:text-[25px] mt-5 md:mt-10 pl-[0.8em] rounded-[10px] border-[5px] border-solid  hover:border-[#2F4858] hover:bg-[white] hover:border-[5px] hover:border-solid`}
           />
           <TextArea
             disabled={loading}
@@ -122,16 +122,18 @@ export const AddRecipe = () => {
             placeholder="Notes"
             onChange={onChange}
             rows={4}
-            className={`bg-customBeige py-1 px-4 w-full placeholder:text-sm hover:bg-customBeige placeholder:text-white cursor-pointer focus:outline-none`}
+            className={`w-[100%] overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[16px] md:text-[25px] mt-5 md:mt-10 pl-[0.8em] rounded-[10px] border-[5px] border-solid  hover:border-[#2F4858] hover:bg-[white] hover:border-[5px] hover:border-solid`}
           />
           <Button
             disabled={loading}
             title={loading ? "Publishing..." : "Publish Recipe"}
-            className={`bg-customPink text-white hover:bg-customPink2 py-1 px-6 w-full mb-4 `}
+            className={`border-2 py-4 bg-[#F3F3F3] text-[#1b4235] px-6 mt-[20px] border-black rounded-xl text-[16px] text-center hover:bg-[#2F4858] hover:text-white transition justify ease-in-out duration-300 max-w-105 hover:scale-105 hover:shadow-lg`}
             type="submit"
           />
         </div>
       </Form>
     </div>
   );
-};
+};// }w-[70%] h-20 overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[25px] mt-10 pl-[0.8em] rounded-[10px] border-[3px] border-solid  hover:border-[#1b4235] hover:bg-[white] hover:border-[3px] hover:border-solid;
+
+//w-[100%] h-20 overflow-hidden bg-[#F3F3F3] text-[#1b4235] transition-all duration-[0.5s] text-[25px] mt-10 pl-[0.8em] rounded-[10px] border-[5px] border-solid  hover:border-[#2F4858] hover:bg-[white] hover:border-[5px] hover:border-solid;

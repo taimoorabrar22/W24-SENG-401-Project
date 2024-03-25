@@ -30,7 +30,7 @@ export const RecipeCard = ({
         <Button
           title="View  More"
           handleClick={() => handleViewMore(_id)}
-          className={`bg-customPink text-white hover:bg-customPink2
+          className={`bg-customPink text-[#1b4235] hover:bg-customPink2
           py-1 px-2 w-[50%]
           `}
         />
@@ -66,7 +66,7 @@ export const Card = ({
     <div
       className={`w-full ${
         isFull ? "md:w-[50%]" : "md:w-[14rem] "
-      } bg-customBeige  
+      } bg-[#EDD3C5]  
       transition ease-in-out delay-150
       hover:
       hover:scale-105
@@ -86,7 +86,7 @@ export const Card = ({
         rounded-lg`}
       />
       <div
-        className={`p-2 bg-customBeige  w-full ${
+        className={`p-2 bg-[#EDD3C5]  w-full ${
           isFull ? "md:w-full" : "md:w-[14rem] "
         } h-15rem] overflow-clip my-3`}
       >
@@ -97,20 +97,20 @@ export const Card = ({
             alt={"A picture of user"}
           />
           <div className="text-left">
-            <p className="text-white font-light">{email}</p>
+            <p className="text-[#1b4235] font-light">{email}</p>
           </div>
         </div>
         <h2
-          className={`text-white font-bold my-2 text-xl  ${
+          className={`text-[#1b4235] font-bold my-2 text-xl  ${
             !isFull && "truncate overflow-hidden ..."
           } `}
         >
           {title}
         </h2>
-        <p className="text-white font-light text-sm">
+        <p className="text-[#1b4235] font-light text-sm">
           ingredients:{" "}
           <span
-            className={`text-white  ${
+            className={`text-[#1b4235]  ${
               !isFull && "truncate overflow-hidden ..."
             }`}
           >
@@ -119,7 +119,7 @@ export const Card = ({
         </p>
 
         <p
-          className={`text-white font-light text-sm my-2 ${
+          className={`text-[#1b4235] font-light text-sm my-2 ${
             !isFull && "truncate overflow-hidden ..."
           }`}
         >
@@ -127,8 +127,8 @@ export const Card = ({
         </p>
 
         {note && (
-          <p className="text-white font-light text-sm py-1 md:py-4">
-            note: <span className="text-white">{note}</span>
+          <p className="text-[#1b4235] font-light text-sm py-1 md:py-4">
+            note: <span className="text-[#1b4235]">{note}</span>
           </p>
         )}
         {children}

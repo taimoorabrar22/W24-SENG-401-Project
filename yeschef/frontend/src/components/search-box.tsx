@@ -17,9 +17,8 @@ export const SearchBox = ({
 }) => {
   return (
     <>
-    <div className="flex w-[70%] mx-auto self-center pt-[10px] justify-evenly pb-[10px] mb-[20px] bg-[#EDD3C5] rounded-lg" >
-      <h2 className="text-[#1b4235] text-[30px]">{title}</h2>
-      <Form onSubmit={onSearch} className="w-[70%]">
+    <div className="flex md:w-[70%] w-[100%] mx-auto self-center pt-[10px] justify-evenly pb-[10px] mb-[20px] bg-[#EDD3C5] rounded-lg" >
+      <Form onSubmit={onSearch} className="w-[100%] px-[20px]">
         <Input
           disabled={disabled}
           placeholder="Search for a recipe"

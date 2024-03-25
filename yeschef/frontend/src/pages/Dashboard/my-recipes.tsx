@@ -51,7 +51,7 @@ export const MyRecipes = () => {
         ) : (
           <>
             {!!state?.length ? (
-              <div className="flex flex-wrap gap-3 flex-col md:flex-row w-ful">
+              <div className="flex flex-wrap gap-3 justify-center flex-col md:flex-row w-ful">
                 {state.map((recipe: IRECIPERESPONSE, index: number) => (
                   <RecipeCard
                     key={index + recipe._id}
