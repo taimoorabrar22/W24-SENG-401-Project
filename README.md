@@ -1,6 +1,6 @@
 # W24-SENG-401-Project
 
-Welcome to Yes Chef 🤖! This README.md file provides you with instructions on how to set up, run, and access the application, how this app is deployed, as well as an overview of the project's design.
+Welcome to Yes Chef ! This README.md file provides you with instructions on how to set up, run, and access the application, how this app is deployed, as well as an overview of the project's design.
 
 ## URL to application
 
