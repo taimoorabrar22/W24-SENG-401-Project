@@ -16,7 +16,7 @@ export const UserProfile = () => {
     const { loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
     return (
         <div className="container bg-[#1b4235] text-white h-[100%] flex flex-col-reverse justify-center md:flex-row w-[100%] max-w-full">
-                 <div className="flex flex-col gap-2  w-full md:h-[70%] md:w-[80%] items-center bg-[#EDD3C5] pt-[20px] pb-[20px] rounded-lg">
+                 <div className="flex flex-col gap-2  w-full md:h-[90%] md:w-[80%] items-center bg-[#EDD3C5] pt-[20px] pb-[20px] rounded-lg">
                     <h2 className="text-[#1b4235] text-[35px] md:text-[55px] font-semibold left-[0] tracking-[0] leading-[normal] text-center [text-shadow:0px_4px_4px_#00000040] mt-[20px]">
                             User profile
                     </h2>

@@ -73,7 +73,7 @@ export const AddRecipe = () => {
   };
 
   return (
-    <div className="text-[#1b4235] bg-[#EDD3C5] mb-[20px] md:mt-[10px] h-[auto] pl-[40px] md:h-[100%] pr-[40px] rounded-xl">
+    <div className="text-[#1b4235] bg-[#EDD3C5] mb-[20px] md:mt-[10px] h-[auto] pl-[40px] md:h-[132%] pr-[40px] rounded-xl">
       <h2 className="text-[#1b4235] md:text-[55px] text-[30px] pt-10 font-semibold leading-[normal] text-center  ">Add a recipe</h2>
 
       <Form
