@@ -1,15 +1,16 @@
 import { FormEvent, useContext, useState } from "react"
-
 import { Button, Form, Input } from "../../components"
 import { AUTH_TYPE, IPAYLOADUPDATE } from "../../@types"
 import { validateEmail } from "../../utils"
 import { AuthenticationContext } from "../../context"
 import cogoToast from "cogo-toast"
+import { useNavigate } from "react-router-dom"
 
 export const UpdateEmail = () => {
 
     const { loading, onUpdate ,user } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [state, setState] = useState<IPAYLOADUPDATE>({ newEmail: '', email: user, newPassword:'' })
+    const navigate = useNavigate();
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!validateEmail(state?.newEmail)) {
@@ -17,6 +18,7 @@ export const UpdateEmail = () => {
         }
         state.email = user;
         await onUpdate(state);
+        navigate("/dashboard/userProfile");
     };
     const handleState = (e: FormEvent<HTMLInputElement>) => {
         const { name, value } = e.currentTarget;
