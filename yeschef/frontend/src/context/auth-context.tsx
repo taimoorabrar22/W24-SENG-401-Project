@@ -29,7 +29,7 @@ export const AuthenticationContextProvider = ({children}: {children: ReactNode})
           sessionStorage.setItem("id", response?.id);
     
           setUser(response?.email);
-          return (window.location.href = "/dashboard");
+          return;
         }
       };
 
