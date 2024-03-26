@@ -49,7 +49,7 @@ export const AuthenticationContextProvider = ({children}: {children: ReactNode})
           }
           sessionStorage.setItem("token", response?.token);
           sessionStorage.setItem("id", response?.id);
-          return (window.location.href = "/dashboard/userProfile");
+          return;
         }
       };
 

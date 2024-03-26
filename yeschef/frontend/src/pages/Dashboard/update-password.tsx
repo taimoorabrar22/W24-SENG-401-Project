@@ -3,11 +3,13 @@ import { Button, Form, Input } from "../../components"
 import { AUTH_TYPE, IPAYLOADUPDATE } from "../../@types"
 import { AuthenticationContext } from "../../context"
 import cogoToast from "cogo-toast"
+import { useNavigate } from "react-router-dom"
 
 export const UpdatePassword = () => {
 
     const { loading, onUpdate ,user } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [state, setState] = useState<IPAYLOADUPDATE>({ newEmail: '', email: user, newPassword:'' })
+    const navigate = useNavigate();
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!state?.newPassword || state.newPassword?.length < 7) {
@@ -15,6 +17,7 @@ export const UpdatePassword = () => {
         }
         state.email = user;
         await onUpdate(state);
+        navigate("/dashboard/userProfile");
     };
     const handleState = (e: FormEvent<HTMLInputElement>) => {
         const { name, value } = e.currentTarget;
