@@ -13,6 +13,7 @@ import xssClean from "xss-clean";
 import { authRouter, recipeRouter } from "./routes";
 
 const app: Application = express();
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
