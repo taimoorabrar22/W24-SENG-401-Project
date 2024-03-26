@@ -31,6 +31,7 @@ export const Landing = () => {
             return cogoToast.error("Please provide password");
         }
         await onLogin(state);
+        navigate("/dashboard");
     };
     const handleState = (e: FormEvent<HTMLInputElement>) => {
         const { name, value } = e.currentTarget;
