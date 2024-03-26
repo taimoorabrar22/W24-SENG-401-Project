@@ -1,7 +1,6 @@
 import { FormEvent, useContext, useState } from "react"
 import { Button, Form, Input } from "../../components"
 import { AUTH_TYPE, IPAYLOADUPDATE } from "../../@types"
-import { validateEmail } from "../../utils"
 import { AuthenticationContext } from "../../context"
 import cogoToast from "cogo-toast"
 

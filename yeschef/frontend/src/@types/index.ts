@@ -11,7 +11,7 @@ export interface IRECIPEPAYLOAD extends IRECIPE {
 
 export interface IRECIPERESPONSE extends IRECIPE {
     _id: string;
-    image: IIMAGE;
+    image: any;
     user: {
         email: string;
     };

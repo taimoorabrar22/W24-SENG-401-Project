@@ -1,11 +1,9 @@
-import { useContext, useLayoutEffect, useState } from "react";
+import { useContext, useLayoutEffect } from "react";
 import { AuthenticationContext } from "../context";
 import { AUTH_TYPE } from "../@types";
-import { NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../components";
-import { MdOutlineClose } from "react-icons/md";
-import { FiMenu } from "react-icons/fi";
-import logo from "../assets/logo-gold.png"
+
 
 const routes = [
     { name: "Home", to: "/dashboard" },
@@ -21,14 +19,7 @@ export const DashboardLayout = () => {
             navigate('/');
         }
     }, []);
-    const goToProfile = () => {
-        navigate("/dashboard/userProfile");
-      };
-    const { onLogout, loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-    const handleIsOpen = () => {
-        setIsOpen((prev) => !prev);
-    }
+    const { onLogout } = useContext(AuthenticationContext) as AUTH_TYPE;
     
     return <div className="w-full h-full bg-[#1b4235] max-w-full overflow-x-hidden">
         <div className="h-[100px] md:h-[80px] flex items-center justify-between px-3 top-0 z-50">
