@@ -3,7 +3,7 @@
 Welcome to Yes Chef ! This README.md file provides you with instructions on how to set up, run, and access the application, how this app is deployed, as well as an overview of the project's design.
 
 ## URL to application
-
+https://w24-seng-401-project-final-c50saku15-taimoorabrar22s-projects.vercel.app/
 
 ## Table of Contents
 - [Design](#design)
