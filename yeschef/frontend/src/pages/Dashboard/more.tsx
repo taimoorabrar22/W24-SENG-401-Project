@@ -1,5 +1,5 @@
 import cogoToast from "cogo-toast";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components";
 import { UILoader } from "../../components/loaders";

@@ -1,6 +1,4 @@
 import { FormEvent, useContext, useLayoutEffect, useState } from "react"
-import logo from "../../assets/logo-green.png"
-
 import { Button, Form, Input } from "../../components"
 import { AUTH_TYPE, IPAYLOAD } from "../../@types"
 import { validateEmail } from "../../utils"

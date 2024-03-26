@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { IRECIPEUSER } from "../@types";
 import { Button } from "./button";
@@ -7,7 +7,6 @@ export const RecipeCard = ({
   _id,
   title,
   ingredients,
-  note,
   image,
   description,
   user,
@@ -41,7 +40,6 @@ export const RecipeCard = ({
 };
 
 export const Card = ({
-  id,
   avatar,
   image,
   title,

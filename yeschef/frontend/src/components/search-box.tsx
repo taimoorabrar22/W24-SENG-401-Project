@@ -3,7 +3,6 @@ import { Form } from "./form";
 import { Input } from "./input";
 
 export const SearchBox = ({
-  title,
   onSearch,
   setQuery,
   query,

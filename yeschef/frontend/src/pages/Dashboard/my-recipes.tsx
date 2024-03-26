@@ -1,8 +1,8 @@
-import React, { useState, FormEvent, Suspense, useContext } from "react";
+import { useState, Suspense, useContext } from "react";
 import useSWR from "swr";
 import cogoToast from "cogo-toast";
 
-import { RecipeCard, SearchBox } from "../../components";
+import { RecipeCard } from "../../components";
 import { instance } from "../../config";
 import { AUTH_TYPE, IRECIPERESPONSE } from "../../@types";
 import { AuthenticationContext } from "../../context";
@@ -11,7 +11,7 @@ import { useRecipe } from "../../hooks";
 import { SearchLoader, UILoader } from "../../components/loaders";
 
 export const MyRecipes = () => {
-  const { loading, searchRecipe } = useRecipe();
+  const { loading } = useRecipe();
   const { user } = useContext(AuthenticationContext) as AUTH_TYPE;
 
   //useswr fetcher
@@ -30,18 +30,8 @@ export const MyRecipes = () => {
     return null;
   }
 
-  const [state, setState] = useState<IRECIPERESPONSE[]>(data || {});
-  const [query, setQuery] = useState<string>("");
+  const [state] = useState<IRECIPERESPONSE[]>(data || {});
 
-  const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!query) return;
-    const result: IRECIPERESPONSE[] = await searchRecipe(query);
-    console.log(result, "RESULT");
-    if (result) {
-      setState(result);
-    }
-  };
 
   return (
     <Suspense fallback={<UILoader />}>

@@ -1,11 +1,10 @@
 import { useContext, useLayoutEffect, useState } from "react";
 import { AuthenticationContext } from "../context";
 import { AUTH_TYPE } from "../@types";
-import { NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../components";
 import { MdOutlineClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
-import logo from "../assets/logo-gold.png"
 
 const routes = [
     { name: "Home", to: "/dashboard" },
@@ -21,7 +20,7 @@ export const DashboardLayout = () => {
             navigate('/');
         }
     }, [])
-    const { onLogout, loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
+    const { onLogout, user } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const handleIsOpen = () => {
         setIsOpen((prev) => !prev);
